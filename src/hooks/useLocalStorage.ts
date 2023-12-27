@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Inputs } from '../types/inputs';
+import { Credentials } from '../types/authCredentials';
 import { delay } from '../utils';
 
 type User = {
@@ -50,7 +50,7 @@ export const useLocalStorage = () => {
     sessionStorage.setItem('user', JSON.stringify(user));
   };
 
-  const loginFunc = ({ userLogin, password }: Inputs) => {
+  const loginFunc = ({ userLogin, password }: Credentials) => {
     delay(1000);
 
     const users = getUsers();

@@ -1,9 +1,9 @@
 import * as React from 'react';
-import Stack from '@mui/material/Stack';
-import Snackbar from '@mui/material/Snackbar';
-import toastStore from '../../store/toast-store';
 import { observer } from 'mobx-react-lite';
 import { Alert } from '@mui/material';
+import Stack from '@mui/material/Stack';
+import Snackbar from '@mui/material/Snackbar';
+import { toastStore } from '../../store';
 
 interface CustomizedSnackbarProps {
   text: string;
