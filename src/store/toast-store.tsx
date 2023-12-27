@@ -16,4 +16,4 @@ class ToastStore {
   };
 }
 
-export default new ToastStore();
+export const toastStore = new ToastStore();
