@@ -1,8 +1,14 @@
 import { Svg } from './Logo.styled';
 
-export const Logo = () => {
+type LogoProps = {
+  width?: number;
+  height?: number;
+  margin?: string;
+};
+
+export const Logo = ({ width, height, margin }: LogoProps) => {
   return (
-    <Svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64">
+    <Svg width={width} height={height} margin={margin} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64">
       <path
         fill="#fb7f12"
         d="M9.333 17.333c0-2.485 0-3.727.406-4.708a5.333 5.333 0 0 1 2.887-2.886c.98-.406 2.222-.406 4.707-.406h3.334c2.485 0 3.727 0 4.707.406a5.333 5.333 0 0 1 2.887 2.886c.406.98.406 2.223.406 4.708v3.333c0 2.485 0 3.728-.406 4.708a5.334 5.334 0 0 1-2.887 2.886c-.98.406-2.222.406-4.707.406h-3.334c-2.485 0-3.727 0-4.707-.406a5.333 5.333 0 0 1-2.887-2.886c-.406-.98-.406-2.223-.406-4.708v-3.333Z"

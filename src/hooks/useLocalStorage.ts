@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
-import { Credentials } from '../types/authCredentials';
+import { AuthCredentials } from '../types/authCredentials';
 import { delay } from '../utils';
 
-type User = {
+export type User = {
   name: string;
   phoneNumber: string;
   email: string;
@@ -34,7 +34,7 @@ export const useLocalStorage = () => {
     } else if (user) {
       localStorage.setItem('users', JSON.stringify([...JSON.parse(cachedUsers), user]));
       alert('Вы зарегистрированы');
-      navigate('/dashboard');
+      navigate('/weather');
     }
   };
 
@@ -50,7 +50,7 @@ export const useLocalStorage = () => {
     sessionStorage.setItem('user', JSON.stringify(user));
   };
 
-  const loginFunc = ({ userLogin, password }: Credentials) => {
+  const loginFunc = ({ userLogin, password }: AuthCredentials) => {
     delay(1000);
 
     const users = getUsers();

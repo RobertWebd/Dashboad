@@ -1,11 +1,9 @@
-import { PageLayout } from '../../components';
-import { SignInForm } from '../../components/SignInForm';
-import { SignUpForm } from '../../components/SignUpForm';
+import { AuthPageLayout, SignInForm, SignUpForm } from '../../components';
 
 type AuthPageProps = {
   signIn?: boolean;
 };
 
 export const AuthPage = ({ signIn }: AuthPageProps) => {
-  return <PageLayout>{signIn ? <SignInForm /> : <SignUpForm />}</PageLayout>;
+  return <AuthPageLayout>{signIn ? <SignInForm /> : <SignUpForm />}</AuthPageLayout>;
 };

@@ -7,7 +7,7 @@ import { CustomizedSnackbar, Logo } from '../../UI';
 import { AuthCredentials } from '../../types/authCredentials';
 import { useLocalStorage } from '../../hooks';
 import { toastStore } from '../../store';
-import { Layout, ViewIcon } from '..';
+import { AuthLayout, ViewIcon } from '../../components';
 import {
   Button,
   Error,
@@ -54,7 +54,7 @@ export const SignInForm = observer(() => {
 
       if (user) {
         saveUser(user);
-        navigate('/dashboard');
+        navigate('/weather');
       } else {
         showToast();
       }
@@ -70,8 +70,8 @@ export const SignInForm = observer(() => {
   };
 
   return (
-    <Layout height={320}>
-      <Logo />
+    <AuthLayout height={320}>
+      <Logo height={40} width={60} margin={`5px 0`} />
       <Text>
         Sign in <OrangeText>Dashik</OrangeText>
       </Text>
@@ -105,6 +105,6 @@ export const SignInForm = observer(() => {
         Dont have an account? <SignUpSpan onClick={() => navigate('/registration')}>Sign up</SignUpSpan>
       </SignUp>
       <CustomizedSnackbar text={'Invalid login/password'} />
-    </Layout>
+    </AuthLayout>
   );
 });

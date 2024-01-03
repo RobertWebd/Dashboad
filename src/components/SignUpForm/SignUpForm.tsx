@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { CustomizedSnackbar, Logo } from '../../UI';
 import { useLocalStorage } from '../../hooks';
 import { RegisterCredentials } from '../../types';
-import { Layout, ViewIcon } from '..';
+import { AuthLayout, ViewIcon } from '../../components';
 import {
   Error,
   FieldsWrapper,
@@ -47,8 +47,8 @@ export const SignUpForm = () => {
   };
 
   return (
-    <Layout height={450}>
-      <Logo />
+    <AuthLayout height={450}>
+      <Logo height={40} width={60} margin="5px 0" />
       <Text>Sign up</Text>
       <FormWrapper onSubmit={handleSubmit(onSubmit)}>
         <FieldsWrapper>
@@ -109,6 +109,6 @@ export const SignUpForm = () => {
         Already have an account? <SignUpSpan onClick={() => navigate('/')}>Sign in</SignUpSpan>
       </SignUp>
       <CustomizedSnackbar text={'Passwords must be the same'} extraState={!passwordsMatch} />
-    </Layout>
+    </AuthLayout>
   );
 };

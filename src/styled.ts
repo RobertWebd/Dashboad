@@ -27,6 +27,11 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  :hover,
+  :focus {
+    outline: none;
+  }
+
   a:focus,
   a:active {
     outline: none;
